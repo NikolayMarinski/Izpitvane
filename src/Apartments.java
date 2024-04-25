@@ -1,5 +1,5 @@
-public class Apartments implements Comparable<Apartments>{
-   // град, бр.стаи, квадратура, цена, телефон
+public class Apartments {
+    // град, бр.стаи, квадратура, цена, телефон
     private String sity;
     private int roomNum;
     private int space;
@@ -57,25 +57,4 @@ public class Apartments implements Comparable<Apartments>{
         this.phone = phone;
     }
 
-    public int compareTo(Apartments a) {
-        if((this.getCity().equals("София") || this.getCity().equals("Варна") || this.getCity().equals("Бургас")) && !a.getCity().equals("София") && !a.getCity().equals("Варна") && !a.getCity().equals("Бургас")){
-            return -1;
-        }else if((a.getCity().equals("София") || a.getCity().equals("Варна") || a.getCity().equals("Бургас")) && !this.getCity().equals("София") && !this.getCity().equals("Варна") && !this.getCity().equals("Бургас")){
-            return 1;
-        }else{
-            if(this.getRoomNum()==3 && a.getRoomNum()!=3){
-                return -1;
-            }else if(this.getRoomNum()!=3 && a.getRoomNum()==3){
-                return 1;
-            }else{
-                if(this.getSpace()>100 && a.getSpace()<=100){
-                    return -1;
-                }else if(this.getSpace()<=100 && a.getSpace()>100){
-                    return 1;
-                }else{
-                    return this.getPrice()-a.getPrice();
-                }
-            }
-        }
-    }
 }
